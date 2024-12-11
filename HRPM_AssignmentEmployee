@@ -1,0 +1,123 @@
+import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
+import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
+import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
+import com.kms.katalon.core.model.FailureHandling as FailureHandling
+import com.kms.katalon.core.testcase.TestCase as TestCase
+import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
+import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.Keys as Keys
+
+WebUI.openBrowser('')
+
+WebUI.maximizeWindow()
+
+WebUI.navigateToUrl('http://192.168.1.90:8083/login')
+
+WebUI.setText(findTestObject('Object Repository/HRPM/HRPM - Assign Employee/Page_HRPM - HR Performance Management/input_Please Sign in to continue to HRPM_username'), 
+    'adminhr')
+
+WebUI.setEncryptedText(findTestObject('Object Repository/HRPM/HRPM - Assign Employee/Page_HRPM - HR Performance Management/input_Please Sign in to continue to HRPM_password'), 
+    'iFGeFYmXIrUhQZHvW7P22w==')
+
+WebUI.click(findTestObject('Object Repository/HRPM/HRPM - Assign Employee/Page_HRPM - HR Performance Management/button_Login'))
+
+WebUI.click(findTestObject('Object Repository/HRPM/HRPM - Assign Employee/Page_GLOBAL/path'))
+
+WebUI.click(findTestObject('Object Repository/HRPM/HRPM - Assign Employee/Page_GLOBAL/div_HR Module'))
+
+WebUI.click(findTestObject('Object Repository/HRPM/HRPM - Assign Employee/Page_HR/span_Administration'))
+
+WebUI.click(findTestObject('Object Repository/HRPM/HRPM - Assign Employee/Page_HR/span_Assign Employee'))
+
+WebUI.delay(8)
+
+WebUI.click(findTestObject('HRPM/HRPM - Assign Employee/Page_HR/Page_HR/button_Level_ant-btn css-kd7ytk ant-btn-text ant-btn-sm'))
+
+WebUI.scrollToElement(findTestObject('HRPM/HRPM - Assign Employee/Page_HR/Page_HR/input_Unassigned Employees_ant-input css-kd7ytk ant-input-outlined'), 
+    0)
+
+WebUI.delay(10)
+
+WebUI.sendKeys(findTestObject('HRPM/HRPM - Assign Employee/Page_HR/Page_HR/input_Unassigned Employees_ant-input css-kd7ytk ant-input-outlined'), 
+    'Fauzan Ahmat Rahmawan')
+
+WebUI.scrollToElement(findTestObject('HRPM/HRPM - Assign Employee/Page_HR/Page_HR/input_Action_ant-checkbox-input'), 0)
+
+WebUI.click(findTestObject('HRPM/HRPM - Assign Employee/Page_HR/Page_HR/input_Action_ant-checkbox-input'))
+
+WebUI.click(findTestObject('HRPM/HRPM - Assign Employee/Page_HR/Page_HR/button_PSD - Presales  Delivery_ant-btn css-kd7ytk ant-btn-primary ant-btn-sm'))
+
+WebUI.sendKeys(findTestObject('HRPM/HRPM - Assign Employee/Page_HR/input_PSD - Presales  Delivery_rc_select_11'), 'Hilmunshah anka')
+
+WebUI.sendKeys(findTestObject('HRPM/HRPM - Assign Employee/Page_HR/input_PSD - Presales  Delivery_rc_select_11'), Keys.chord(
+        Keys.ENTER))
+
+WebUI.click(findTestObject('HRPM/HRPM - Assign Employee/Page_HR/Page_HR/div_HR  Administration  Competencies  Assign Employee_ant-float-btn-body'), 
+    FailureHandling.STOP_ON_FAILURE)
+
+WebUI.delay(4)
+
+WebUI.click(findTestObject('HRPM/HRPM - Assign Employee/Page_HR/span_Submit'))
+
+WebUI.sendKeys(findTestObject('HRPM/HRPM - Assign Employee/Page_HR/Page_HR/textarea_Please leave a notes before submit_confirmation-form_confirmationNotes'), 
+    'OK')
+
+WebUI.click(findTestObject('HRPM/HRPM - Assign Employee/Page_HR/Page_HR/button_Confirm'))
+
+WebUI.delay(4)
+
+WebUI.click(findTestObject('HRPM/HRPM - Assign Employee/Page_HR/Page_HR/div_adminhr'))
+
+WebUI.click(findTestObject('HRPM/HRPM - Assign Employee/Page_HR/Page_HR/div_Log Out'))
+
+WebUI.click(findTestObject('HRPM/HRPM - Assign Employee/Page_HR/Page_HR/button_Login page'))
+
+WebUI.verifyTextPresent('Welcome!', false)
+
+WebUI.setText(findTestObject('Object Repository/HRPM/HRPM - Assign Employee/Page_HRPM - HR Performance Management/input_Please Sign in to continue to HRPM_username'), 
+    'admin')
+
+WebUI.setEncryptedText(findTestObject('Object Repository/HRPM/HRPM - Assign Employee/Page_HRPM - HR Performance Management/input_Please Sign in to continue to HRPM_password'), 
+    'iFGeFYmXIrUhQZHvW7P22w==')
+
+WebUI.click(findTestObject('Object Repository/HRPM/HRPM - Assign Employee/Page_HRPM - HR Performance Management/button_Login'))
+
+WebUI.verifyTextPresent('Administrator', false)
+
+WebUI.click(findTestObject('HRPM/HRPM - Assign Employee/HRPM Approval/Task List/span_Task List'))
+
+WebUI.click(findTestObject('HRPM/HRPM - Assign Employee/HRPM Approval/Task List/li_Task List'))
+
+WebUI.click(findTestObject('HRPM/HRPM - Assign Employee/HRPM Approval/Page_GLOBAL/button_Submit Note_ant-btn css-kd7ytk ant-btn-text'))
+
+WebUI.delay(2)
+
+WebUI.scrollToElement(findTestObject('HRPM/HRPM - Assign Employee/HRPM Approval/Page_GLOBAL/button_Approve'), 0)
+
+WebUI.click(findTestObject('HRPM/HRPM - Assign Employee/HRPM Approval/Page_GLOBAL/button_Approve'))
+
+WebUI.sendKeys(findTestObject('HRPM/HRPM - Assign Employee/HRPM Approval/Page_GLOBAL/textarea_Please leave a notes before process_confirmation-form_confirmationNotes'), 
+    'ok')
+
+WebUI.click(findTestObject('HRPM/HRPM - Assign Employee/HRPM Approval/button_Confirm'))
+
+WebUI.delay(2)
+
+WebUI.click(findTestObject('HRPM/HRPM - Assign Employee/HRPM Approval/div_Administrator'))
+
+WebUI.click(findTestObject('HRPM/HRPM - Assign Employee/HRPM Approval/span_Log Out'))
+
+WebUI.click(findTestObject('HRPM/HRPM - Assign Employee/HRPM Approval/button_Login page'))
+
+WebUI.verifyTextPresent('Welcome!', false)
+
